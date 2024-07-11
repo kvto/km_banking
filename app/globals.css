@@ -159,19 +159,19 @@
   }
 
   .profile-banner {
-    @apply h-[120px] w-full bg-gradient-mesh bg-cover bg-no-repeat;
+    @apply h-[120px] w-full bg-gradient-mesh bg-cover bg-no-repeat py-28 ;
   }
 
   .profile {
-    @apply relative flex px-6 max-xl:justify-center;
+    @apply relative flex px-6 py-6 max-xl:justify-center;
   }
 
   .profile-img {
-    @apply flex-center absolute -top-8 size-24 rounded-full bg-gray-100 border-8 border-white p-2 shadow-profile;
+    @apply flex-center absolute -top-8 size-24 rounded-full bg-gray-100 border-8 border-white shadow-profile;
   }
 
   .profile-details {
-    @apply flex flex-col pt-24;
+    @apply flex flex-col py-28;
   }
 
   .profile-name {
@@ -183,7 +183,7 @@
   }
 
   .banks {
-    @apply flex flex-col justify-between gap-8 px-6 py-8;
+    @apply flex flex-col justify-between gap-8 px-6 py-20;
   }
 
   /* My Banks */
