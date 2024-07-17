@@ -48,7 +48,20 @@ const Authform = ({ type }: {type: string}) => {
 
             if(type === "sign-up"){
                 
-                const newUser = await signUp(data)
+                const userData = {
+                    firstName: data.firstName!,
+                    lastName: data.lastName!,
+                    address1: data.address1!,
+                    city: data.city!,
+                    state: data.state!,
+                    postalCode: data.postalCode!,
+                    dateOfBirth: data.dateOfBirth!,
+                    ssn: data.ssn!,
+                    email: data.email!,
+                    password: data.password!    
+                }
+
+                const newUser = await signUp(userData)
                 setUser(newUser)
             }
 
@@ -97,11 +110,11 @@ const Authform = ({ type }: {type: string}) => {
                 </h1>
             </div>
         </header>
-        {/* {user ? ( */}
+         {user ? ( 
             <div className='flex flex-col gap-4'>
                 <PlaidLink user={user} variant="primary" />
             </div>
-        {/* ) : ( */}
+         ) : ( 
             <>
             <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)}
@@ -115,7 +128,7 @@ const Authform = ({ type }: {type: string}) => {
                         <CustomInput control={form.control} name="address1" label="Direccion" placeholder="Ingresa su direccion"/>
                         <CustomInput control={form.control} name="city" label="Ciudad" placeholder="Ingresa su ciudad"/>
                         <div className='flex gap-4'>
-                        <CustomInput control={form.control} name="state" label="Estado" placeholder="Ejemplo: PU"/>
+                        <CustomInput control={form.control} name='state' label="State" placeholder='Example: NY' />
                         <CustomInput control={form.control} name="postalCode" label="Codigo Postal" placeholder="ejemplo: 11101"/>
                         </div>
                         <div className='flex gap-4'>
@@ -151,7 +164,7 @@ const Authform = ({ type }: {type: string}) => {
                     </Link>
             </footer>
             </>
-        {/* )} */}
+        )} 
     </section>
   )
 }
